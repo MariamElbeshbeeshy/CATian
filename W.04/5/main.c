@@ -3,7 +3,7 @@
 
 int main()
 {
-        int arr[5][5],sum=0;
+        int arr[5][5],rsum[5]={0},csum[5]={0};
         for (int i=0; i<5; i++)
         {
             for (int j=0; j<5; j++)
@@ -12,27 +12,29 @@ int main()
             }
         }
 
-        for (int i=0; i<5; i++)
-        {
-            for (int j=0; j<5; j++)
-            {
-                sum+=arr[i][j];
-            }
-            printf("%d\t",sum);
-            sum=0;
-        }
-
-        printf("\n");
 
         for (int i=0; i<5; i++)
         {
             for (int j=0; j<5; j++)
             {
-                sum+=arr[j][i];
+                rsum[i]+=arr[i][j];
+                csum[i]+=arr[j][i];
             }
-            printf("%d\t",sum);
-            sum=0;
+        }
+        for (int i=0; i<5; i++)
+        {
+            printf("%d\t",rsum[i]);
         }
 
-    return 0;
+        printf ("\n");
+
+        for (int i=0; i<5; i++)
+        {
+            printf("%d\t",csum[i]);
+        }
 }
+
+
+
+
+
